@@ -24,4 +24,9 @@ class Author
     end
     authors
   end
+
+  def self.search(author)
+    results = DB.exec("SELECT * FROM authors WHERE name = '#{author}';")
+    @id = results.first['id'].to_i
+  end
 end

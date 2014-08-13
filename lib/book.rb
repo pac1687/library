@@ -24,4 +24,9 @@ class Book
     end
     books
   end
+
+  def self.search(book_title)
+    results = DB.exec("SELECT * FROM books WHERE title = '#{book_title}';")
+    @id = results.first['id'].to_i
+  end
 end
