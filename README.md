@@ -16,4 +16,4 @@ Either clone this repository or download the .zip and open in your console or su
 MIT
 
 ##Overview
-![Alt text](/Users/epicodus/Desktop/overview.png?raw=true "Library Schema")
+![Imgur](http://i.imgur.com/kxYgX8Q.png)
