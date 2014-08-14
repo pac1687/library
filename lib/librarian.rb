@@ -41,4 +41,9 @@ class Librarian
     table_name = self.table_name
     results = DB.exec("UPDATE #{table_name} SET name = '#{new_name}' WHERE id = #{id};")
   end
+
+  def self.delete(id)
+    table_name = self.table_name
+    DB.exec("DELETE FROM #{table_name} WHERE id = #{id}")
+  end
 end

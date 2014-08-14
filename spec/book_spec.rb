@@ -21,4 +21,11 @@ describe Book do
     new_book = Book.search_return_name(new_book_name)
     expect(new_book).to eq new_book_name
   end
+
+  it 'delete a book from the database' do
+    test_book = Book.new({'name' => 'The Sun Also Rises'})
+    test_book.save
+    Book.delete(test_book.id)
+    expect(Book.all).to eq []
+  end
 end

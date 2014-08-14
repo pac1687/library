@@ -21,4 +21,5 @@ describe Author do
     new_author = Author.search_return_name(new_author_name)
     expect(new_author).to eq new_author_name
   end
+
 end

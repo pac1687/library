@@ -46,4 +46,8 @@ class Authors_book
     end
     authors
   end
+
+  def self.delete(authors_book_id)
+    DB.exec("DELETE FROM authors_books WHERE id = #{authors_book_id};")
+  end
 end
