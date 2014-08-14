@@ -25,9 +25,20 @@ class Librarian
     self.to_s.downcase.pluralize
   end
 
-  def self.search(name)
+  def self.search_return_id(name)
     table_name = self.table_name
     results = DB.exec("SELECT * FROM #{table_name} WHERE name = '#{name}';")
     @id = results.first['id'].to_i
+  end
+
+  def self.search_return_name(name)
+    table_name = self.table_name
+    results = DB.exec("SELECT * FROM #{table_name} WHERE name = '#{name}';")
+    @name = results.first['name']
+  end
+
+  def self.update(new_name, id)
+    table_name = self.table_name
+    results = DB.exec("UPDATE #{table_name} SET name = '#{new_name}' WHERE id = #{id};")
   end
 end
